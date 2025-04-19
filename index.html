@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search GitHub username..." aria-label="Search GitHub">
+                <button id="search-button" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link">Pull requests</a>
+                <a href="#" class="nav-link">Issues</a>
+                <a href="#" class="nav-link">Marketplace</a>
+                <a href="#" class="nav-link">Explore</a>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="container">
+            <aside class="profile-sidebar">
+                <div class="profile-image">
+                    <img id="avatar" src="https://via.placeholder.com/260" alt="Profile Picture" loading="lazy">
+                </div>
+                <h1 class="profile-name" id="name">Username</h1>
+                <p class="profile-username" id="login">@prk-adi</p>
+                <p class="profile-bio" id="bio">Bio goes here.</p>
+                
+                <div class="profile-details">
+                    <p class="profile-detail">
+                        <i class="fas fa-users"></i>
+                        <span id="followers">0</span> followers · <span id="following">0</span> following
+                    </p>
+                    <p class="profile-detail" id="location-container">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="location">Not available</span>
+                    </p>
+                    <p class="profile-detail" id="blog-container">
+                        <i class="fas fa-link"></i>
+                        <a id="blog" href="#" target="_blank" rel="noopener noreferrer">No website</a>
+                    </p>
+                    <p class="profile-detail" id="twitter-container">
+                        <i class="fas fa-twitter"></i>
+                        <a id="twitter" href="#" target="_blank" rel="noopener noreferrer">No Twitter</a>
+                    </p>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <nav class="profile-nav">
+                    <a href="#" class="profile-nav-link active" data-tab="overview">Overview</a>
+                    <a href="#" class="profile-nav-link" data-tab="repos">Repositories <span id="repo-count" class="count-badge">0</span></a>
+                    <a href="#" class="profile-nav-link" data-tab="projects">Projects</a>
+                    <a href="#" class="profile-nav-link" data-tab="packages">Packages</a>
+                    <a href="#" class="profile-nav-link" data-tab="stars">Stars</a>
+                </nav>
+
+                <div class="tab-content active" id="overview-tab">
+                    <div class="pinned-repos">
+                        <h2 class="section-title">Pinned repositories</h2>
+                        <div class="repo-grid" id="pinned-repos">
+                            <!-- Pinned repos will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h2 class="section-title">Contributions</h2>
+                        <div class="contributions-graph">
+                            <canvas id="contributions-chart" aria-label="Contributions chart" role="img"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="repos-tab">
+                    <div class="repos-header">
+                        <input type="text" id="repo-search" placeholder="Find a repository..." aria-label="Search repositories">
+                        <div class="repo-filters">
+                            <select id="repo-type" aria-label="Filter repository type">
+                                <option value="all">All</option>
+                                <option value="owner">Owner</option>
+                                <option value="member">Member</option>
+                            </select>
+                            <select id="repo-sort" aria-label="Sort repositories">
+                                <option value="updated">Last updated</option>
+                                <option value="created">Created</option>
+                                <option value="pushed">Pushed</option>
+                                <option value="full_name">Name</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="repos-list" id="repos-list">
+                        <!-- Repositories will be inserted here by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="tab-content" id="projects-tab">
+                    <div class="empty-state">
+                        <h3>Projects</h3>
+                        <p>Projects let you organize your work. You can create projects for repositories, for your account, or for organizations.</p>
+                        <button class="btn btn-primary new-project-button">New project</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="packages-tab">
+                    <div class="empty-state">
+                        <h3>Packages</h3>
+                        <p>Packages help you host and manage your code, containers, and other dependencies.</p>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="stars-tab">
+                    <div class="empty-state">
+                        <h3>Stars</h3>
+                        <p>Stars are a way to bookmark repositories you find interesting.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
